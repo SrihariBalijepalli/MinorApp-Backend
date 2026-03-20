@@ -1,0 +1,46 @@
+
+#  Build files
+target/
+build/
+
+#  ENV FILE (VERY IMPORTANT)
+.env
+
+# Maven wrapper
+.mvn/wrapper/maven-wrapper.jar
+
+# Keep target in src (Spring Boot structure)
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+#  Logs
+*.log
+
+#  OS files
+.DS_Store
+Thumbs.db
