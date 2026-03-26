@@ -23,9 +23,20 @@ public class AuthController {
     // 🔵 LOGIN
     @PostMapping("/login")
     public User login(
-            @RequestParam String email,
-            @RequestParam String password) {
+            @RequestParam("email") String email,
+            @RequestParam("password") String password) {
 
         return authService.login(email, password);
+    }
+
+    // ✏️ UPDATE
+    @PutMapping("/update")
+    public User update(
+            @RequestParam("email") String email,
+            @RequestParam(value = "name", required = false) String name,
+            @RequestParam(value = "password", required = false) String password,
+            @RequestParam(value = "targetRole", required = false) String targetRole) {
+        
+        return authService.updateUser(email, name, password, targetRole);
     }
 }

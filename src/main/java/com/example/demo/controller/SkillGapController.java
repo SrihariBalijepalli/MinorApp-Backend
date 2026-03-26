@@ -18,7 +18,7 @@ public class SkillGapController {
 
     @PostMapping
     public Map<String, Object> analyzeGap(
-            @RequestParam String role,
+            @RequestParam("role") String role,
             @RequestBody List<String> userSkills) {
 
         return skillGapService.analyzeSkillGap(role, userSkills);

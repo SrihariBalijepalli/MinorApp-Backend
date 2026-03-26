@@ -38,4 +38,24 @@ public class AuthService {
 
         return user;
     }
+
+    // ✏️ UPDATE
+    public User updateUser(String email, String name, String password, String targetRole) {
+        User user = userRepository.findByEmail(email);
+        if (user == null) {
+            throw new BadRequestException("User not found");
+        }
+        
+        if (name != null && !name.trim().isEmpty()) {
+            user.setName(name);
+        }
+        if (password != null && !password.trim().isEmpty()) {
+            user.setPassword(password);
+        }
+        if (targetRole != null && !targetRole.trim().isEmpty()) {
+            user.setTargetRole(targetRole);
+        }
+        
+        return userRepository.save(user);
+    }
 }

@@ -18,7 +18,7 @@ public class AnalysisController {
 
     @PostMapping
     public Map<String, Object> analyze(
-            @RequestParam String role,
+            @RequestParam("role") String role,
             @RequestBody List<String> userSkills) {
 
         return analysisService.analyze(role, userSkills);

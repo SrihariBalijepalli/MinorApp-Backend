@@ -12,7 +12,7 @@ build/
 # Keep target in src (Spring Boot structure)
 !**/src/main/**/target/
 !**/src/test/**/target/
-
+.env
 ### STS ###
 .apt_generated
 .classpath
